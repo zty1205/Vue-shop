@@ -1,0 +1,114 @@
+@charset "UTF-8";
+@import "./mixin";
+
+$base_font_size: 14px;
+$border_one_hui: 1px solid #dddee1;
+$cart_width: 10%;
+
+%promotion_order{
+  display: inline-block;
+  padding: 8px 32px;
+  border-radius: 6px;
+  background: #2d8cf0;
+  color: #fff;
+  cursor: pointer;
+}
+
+.cart{
+  margin: 32px;
+  background: #fff;
+  border: $border_one_hui;
+  border-radius: 10px;
+
+  &-header-title{
+    padding: 16px 32px;
+    border-bottom: $border_one_hui;
+    border-radius: 10px 10px 0 0;
+    background: #f8f8f9;
+  }
+  &-header-main{
+    padding: 8px 32px;
+    overflow: hidden;
+    border-bottom: $border_one_hui;
+    background: #eee;
+    overflow: hidden;
+
+    & div{
+      text-align: center;
+      float: left;
+      font-size: $base_font_size;
+    }
+  }
+  &-empty{
+    text-align: center;
+    padding: 32px;
+  }
+  div &-info{
+    width: $cart_width * 6;
+    text-align: left;
+  }
+  &-price, &-count, &-cost,&-delete{
+    width: $cart_width;
+  }
+}
+
+.cart-content-main{
+  padding: 0 32px;
+  @include height_line_down(60px,0);
+  text-align: center;
+  border-bottom: 1px dashed #e9eaec;
+  overflow: hidden;
+  & div{
+    float: left;
+  }
+  & img{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    top: 10px;
+  }
+}
+
+.cart-control-minus,
+.cart-control-add{
+  display: inline-block;
+  margin: 0 4px;
+  width: 24px;
+  @include height_line_down(24px, 2px);
+  text-align: center;
+  background: #f8f8f9;
+  border-radius: 50%;
+  box-shadow: 0 1px 1px rgba(0,0,0,.2);
+  cursor: pointer;
+}
+.cart-control-delete{
+  cursor: pointer;
+  color: #2d8cf0;
+}
+.cart-promotion{
+  padding: 16px 32px;
+}
+
+.cart-control-order{
+  @extend  %promotion_order
+}
+.cart-control-promotion{
+  @extend  %promotion_order;
+  padding: 2px 6px;
+  font-size: $base_font_size - 2px;
+  border-radius: 3px;
+}
+
+.cart-footer{
+  padding: 32px;
+  text-align: right;
+  &-desc{
+    display: inline-block;
+    padding: 0 16px;
+    & span{
+      color: #f2352e;
+      font-size: $base_font_size + 6px;
+    }
+  }
+}
+
